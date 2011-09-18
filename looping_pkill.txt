@@ -1,0 +1,9 @@
+# OS: centos 5
+# Shell: bash
+# Desc: Kills all processes that match expression every 5 seconds. I highly recommend running pgrep with the expression prior to running pkill
+
+# Test expression:
+pgrep -l -x -u postgres -f "postgres: postgresuserconnectionname 192.168.1.192(.*) SELECT"
+
+# Kill pids from expression. This is infinite on purpose, you will need to ctl-c this command.
+while true; do sudo pkill -x -u postgres -f "postgres: postgresuserconnectionname 192.168.1.192(.*) SELECT"; echo "killed pids"; sleep 5; true; done
