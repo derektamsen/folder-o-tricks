@@ -1,3 +1,8 @@
 This contains random shell one liners. Some modifications maybe needed so copy and paste with care.
 
 At the top of each file you will find what shell and os they were tested on.
+
+SUMMARY:
+- loop_pkill.txt = This can be used if you need to kill a process every several minutes. The example I have used is in the case of a postgres connection that is trying to execute a query that consumes all the db cpu's. This will give you time to track down the incoming connection and turn it off
+
+- svn_client.txt = Simple svn one liners. One of the examples is adding all new files to svn under multiple directories.
