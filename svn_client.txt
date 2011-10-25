@@ -1,0 +1,9 @@
+# OS: centos 5, mac os x 10.7
+# Shell: bash
+# Desc: These are quick one liners for svn. Please check the output first as some of the commands may do unexpected things.
+
+# Add only untracked files to svn repo.
+# List all files that are not under svn control.
+svn status | grep -e ^?
+# Add the files to svn
+svn status | grep -e ^? | awk '{print "svn add "$2}' | sh
