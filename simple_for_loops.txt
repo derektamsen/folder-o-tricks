@@ -1,0 +1,8 @@
+# OS: centos 5, mac os x 10.7
+# Shell: bash
+# Desc: These are quick one liners for loops. Please check the output first as some of the commands may do unexpected things.
+
+# This will list the contents of $DIR sorted by modified time and remove the most recent 32 files from the output.
+# Then the remaining $DIR will be deleted leaving the 32 most recent files on disk.
+DIR='/db/archive_dir'
+for x in `sudo ls -tr1 ${DIR} | head -n -32`; do sudo rm -v "${DIR}/${x}"; done
