@@ -6,3 +6,7 @@
 # Then the remaining $DIR will be deleted leaving the 32 most recent files on disk.
 DIR='/db/archive_dir'
 for x in `sudo ls -tr1 ${DIR} | head -n -32`; do sudo rm -v "${DIR}/${x}"; done
+
+#OR
+DIR='/db/archive_dir'
+sudo rm -f ${DIR}/`ls -t ${DIR} | awk 'NR>32'`
