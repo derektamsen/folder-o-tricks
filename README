@@ -8,3 +8,5 @@ SUMMARY:
 - svn_client.txt = Simple svn one liners. One of the examples is adding all new files to svn under multiple directories.
 
 - simple_for_loops.txt = Simple bash one liner for loops for common things. An example would be to remove all but the 32 most recent files in a directory.
+
+- (dir) kickstart = contains scripts for use when kickstarting linux operating systems.

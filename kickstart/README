@@ -1,0 +1,14 @@
+SUMMARY:
+- gen_ks-floppy.sh: This script will generate a 1.44 MB floppy disk image and add a kickstart file to it. The floppy image can then be used on a ipmi, Dell DRAC, or HP iLO card for os installation. The script was intended to be used to kickstart RHEL/CentOS servers so that the original iso does not need to be modified.
+  - Using: ./gen_ks-floppy.sh --imagelocation=<place_to_save_img_file> --kickstartfile=<kickstart_file> where:
+    - <place_to_save_img_file>: is the location where you would like the floppy image to be saved to.
+    - <kickstart_file>: is the path of the kickstart file you want added to the floppy image.
+  - The script will place the kickstart file by itself on the root of the floppy image formatted in FAT.
+  - Kickstarting an installation with the image:
+    1. Attach your os iso via your out-of-band management device
+    2. Attach the floppy image that has been created from the script to the the server via your out-of-band management device.
+    3. Power on the server and boot from the installation iso.
+    4. When grub appears pres "tab" to edit the default "install" option.
+    5. Add " ks=hd:fd0:/<kickstart_file>" to the default "install" option and boot the server using the modified line.
+      - you may need to adjust the hd:fd0:/<kickstart_file> line to fit your hardware configuration.
+  - The script will build floppy image on Mac OS X Lion and various Linux operating systems.
